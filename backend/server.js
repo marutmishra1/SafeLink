@@ -53,7 +53,8 @@ const PORT =
 /* ================= MIDDLEWARE ================= */
 
 const allowedOrigins = [
-  "http://localhost:5173",
+    "http://localhost:5173",
+    "https://safe-link-psi.vercel.app",
 ];
 
 

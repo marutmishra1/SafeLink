@@ -1,0 +1,922 @@
+.offline-test-page {
+    min-height: 100vh;
+
+    padding: 40px 20px 60px;
+
+    background: var(--bg-primary);
+
+    color: var(--text-primary);
+}
+
+
+.offline-test-container {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   NETWORK DASHBOARD
+======================================== */
+
+.network-dashboard {
+    width: 100%;
+
+    margin-bottom: 25px;
+
+    padding: 32px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background: var(--bg-secondary);
+
+    box-shadow: var(--card-shadow);
+
+    overflow: hidden;
+}
+
+
+.network-dashboard-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+}
+
+
+.network-eyebrow {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--accent);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.network-dashboard-header h1 {
+    margin: 0;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+}
+
+
+.network-live-dot {
+    width: 14px;
+
+    height: 14px;
+
+    border-radius: 50%;
+}
+
+
+.network-live-dot.online {
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 8px
+        rgba(34, 197, 94, 0.10);
+
+    animation:
+        networkPulse 2s infinite;
+}
+
+
+.network-live-dot.offline {
+    background: #ef4444;
+
+    box-shadow:
+        0 0 0 8px
+        rgba(239, 68, 68, 0.10);
+}
+
+
+/* ========================================
+   RADAR
+======================================== */
+
+.network-radar {
+    position: relative;
+
+    width: 310px;
+
+    height: 310px;
+
+    margin: 35px auto;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+}
+
+
+.radar-ring {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+.radar-ring-one {
+    width: 210px;
+    height: 210px;
+}
+
+
+.radar-ring-two {
+    width: 310px;
+    height: 310px;
+}
+
+
+/* ========================================
+   REAL RADAR SCAN
+======================================== */
+
+.radar-scan {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 100% 0 0 0;
+
+    background:
+        linear-gradient(
+            45deg,
+            transparent 45%,
+            rgba(34, 197, 94, 0.12)
+        );
+
+    transform-origin: 0 0;
+
+    animation:
+        radarSweep 3s linear infinite;
+}
+
+
+@keyframes radarSweep {
+
+    from {
+        transform:
+            rotate(0deg)
+            translate(-50%, -50%);
+    }
+
+    to {
+        transform:
+            rotate(360deg)
+            translate(-50%, -50%);
+    }
+
+}
+
+
+/* ========================================
+   RADAR CENTER
+======================================== */
+
+.radar-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 82px;
+
+    height: 82px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: #ef4444;
+
+    color: #ffffff;
+
+    font-size: 1.7rem;
+
+    transform:
+        translate(-50%, -50%);
+
+    box-shadow:
+        0 0 0 14px
+        rgba(239, 68, 68, 0.08);
+
+    transition: 0.3s ease;
+}
+
+
+.radar-center.connected {
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 14px
+        rgba(34, 197, 94, 0.10);
+
+    animation:
+        connectedCenterPulse 1.8s infinite;
+}
+
+
+@keyframes connectedCenterPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 10px
+            rgba(34, 197, 94, 0.10);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 20px
+            rgba(34, 197, 94, 0.03);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 10px
+            rgba(34, 197, 94, 0.10);
+    }
+
+}
+
+
+/* ========================================
+   REAL CONNECTED PEER INDICATORS
+======================================== */
+
+.radar-device {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    animation:
+        peerPulse 1.8s infinite;
+}
+
+
+.radar-device span {
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+}
+
+
+.radar-device-top {
+    top: 0;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+.radar-device-right {
+    top: 50%;
+
+    right: 0;
+
+    transform:
+        translateY(-50%);
+}
+
+
+.radar-device-bottom {
+    bottom: 0;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+.radar-device-left {
+    top: 50%;
+
+    left: 0;
+
+    transform:
+        translateY(-50%);
+}
+
+
+@keyframes peerPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0
+            rgba(34, 197, 94, 0.18);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 10px
+            rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0
+            rgba(34, 197, 94, 0);
+    }
+
+}
+
+
+/* ========================================
+   NETWORK ANALYSIS
+======================================== */
+
+.network-analysis {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.network-analysis-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.network-analysis-item span {
+    color: var(--text-secondary);
+
+    font-size: 0.82rem;
+}
+
+
+.network-analysis-item strong {
+    color: var(--text-primary);
+
+    font-size: 1rem;
+}
+
+
+/* ========================================
+   ACTIONS
+======================================== */
+
+.network-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* ========================================
+   P2P CARD
+======================================== */
+
+.p2p-card {
+    padding: 28px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    background: var(--bg-secondary);
+
+    box-shadow: var(--card-shadow);
+}
+
+
+.p2p-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 1.3rem;
+}
+
+
+.p2p-description {
+    margin-bottom: 20px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.p2p-btn {
+    padding: 10px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: var(--accent);
+
+    color: #ffffff;
+
+    font-size: 0.88rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.p2p-btn:hover {
+    transform:
+        translateY(-1px);
+
+    opacity: 0.9;
+}
+
+
+.p2p-btn.secondary {
+    background: transparent;
+
+    color: var(--text-primary);
+}
+
+
+/* ========================================
+   QR
+======================================== */
+
+.qr-pairing-area {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin: 25px 0;
+
+    text-align: center;
+}
+
+
+.qr-code-box {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: #ffffff;
+}
+
+
+.qr-help-text {
+    margin-top: 15px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.85rem;
+}
+
+
+.qr-scanner-area {
+    width: 100%;
+
+    max-width: 450px;
+
+    margin: 20px auto;
+}
+
+
+#safelink-qr-reader {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+}
+
+
+.qr-scanner-area .p2p-btn {
+    margin-top: 15px;
+}
+
+
+/* ========================================
+   CONNECTED
+======================================== */
+
+.connected-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.connected-badge {
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    color: #22c55e;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   MESSAGE STATS
+======================================== */
+
+.message-stat-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin: 25px 0;
+}
+
+
+.message-stat-grid > div {
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--bg-primary);
+}
+
+
+.message-stat-grid span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.78rem;
+}
+
+
+.message-stat-grid strong {
+    font-size: 1rem;
+}
+
+
+/* ========================================
+   MESSAGE INPUT
+======================================== */
+
+.p2p-message-row {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+
+.p2p-message-input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: var(--bg-primary);
+
+    color: var(--text-primary);
+}
+
+
+.p2p-message-input:focus {
+    border-color: var(--accent);
+}
+
+
+/* ========================================
+   DIVIDER
+======================================== */
+
+.p2p-divider {
+    height: 1px;
+
+    margin: 30px 0;
+
+    background: var(--border);
+}
+
+
+/* ========================================
+   RECEIVED MESSAGE
+======================================== */
+
+.received-message {
+    margin-top: 12px;
+
+    padding: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--bg-primary);
+}
+
+
+.received-message-sender {
+    margin-bottom: 5px;
+
+    color: var(--accent);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+}
+
+
+.received-message-text {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    line-height: 1.5;
+}
+
+
+.empty-p2p {
+    padding: 25px;
+
+    border: 1px dashed var(--border);
+
+    border-radius: 10px;
+
+    color: var(--text-secondary);
+
+    text-align: center;
+}
+
+
+/* ========================================
+   NETWORK PULSE
+======================================== */
+
+@keyframes networkPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 3px
+            rgba(34, 197, 94, 0.10);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 8px
+            rgba(34, 197, 94, 0.03);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 3px
+            rgba(34, 197, 94, 0.10);
+    }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    .offline-test-page {
+        padding: 30px 16px 45px;
+    }
+
+
+    .network-dashboard {
+        padding: 24px;
+    }
+
+
+    .network-radar {
+        width: 270px;
+
+        height: 270px;
+    }
+
+
+    .radar-ring-one {
+        width: 180px;
+
+        height: 180px;
+    }
+
+
+    .radar-ring-two {
+        width: 270px;
+
+        height: 270px;
+    }
+
+
+    .network-analysis {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 576px) {
+
+    .offline-test-page {
+        padding: 22px 14px 40px;
+    }
+
+
+    .network-dashboard {
+        padding: 20px;
+
+        border-radius: 14px;
+    }
+
+
+    .network-dashboard-header h1 {
+        font-size: 1.6rem;
+    }
+
+
+    .network-radar {
+        width: 230px;
+
+        height: 230px;
+    }
+
+
+    .radar-ring-one {
+        width: 155px;
+
+        height: 155px;
+    }
+
+
+    .radar-ring-two {
+        width: 230px;
+
+        height: 230px;
+    }
+
+
+    .radar-center {
+        width: 68px;
+
+        height: 68px;
+    }
+
+
+    .network-analysis {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .network-actions {
+        flex-direction: column;
+    }
+
+
+    .network-actions .p2p-btn {
+        width: 100%;
+    }
+
+
+    .p2p-card {
+        padding: 20px;
+
+        border-radius: 13px;
+    }
+
+
+    .message-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .p2p-message-row {
+        flex-direction: column;
+    }
+
+
+    .p2p-message-input {
+        width: 100%;
+    }
+
+
+    .p2p-message-row .p2p-btn {
+        width: 100%;
+    }
+
+
+    .connected-header {
+        flex-direction: column;
+    }
+
+}

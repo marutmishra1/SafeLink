@@ -83,12 +83,21 @@ Backend
       ↓
 Database
 
+**Live Demo:**  
+https://safe-link-psi.vercel.app
+
+**Demo Video:**  
+https://drive.google.com/file/d/1oCfXqpt0TIcgEhXYv5DTNQ9QxfYkdLBN/view
+
+**GitHub Repository:**  
+https://github.com/marutmishra1/SafeLink
+
 
 ## 👥 Team
 
-| Name | Contribution |
-|---|---|
-| **Marut Mishra** | Frontend, Backend, UI/UX, Deployment |
-| **Anshika Srivastava** | Product/Research |
-| **Yashwant Rao** | AI / ML |
-| **Priyanshu Singh** | Presentation / Demo |
+| Name                   | Contribution                         |
+| ---------------------- | ------------------------------------ |
+| **Marut Mishra**       | Frontend, Backend, UI/UX, Deployment |
+| **Anshika Srivastava** | Product/Research                     |
+| **Yashwant Rao**       | AI / ML                              |
+| **Priyanshu Singh**    | Presentation / Demo                  |

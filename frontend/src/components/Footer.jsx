@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
     return (
         <footer className="app-footer">
@@ -8,10 +10,18 @@ function Footer() {
                     {/* Brand */}
                     <div className="footer-brand">
 
-                        <a href="#home" className="brand">
-                            <span className="brand-icon">S</span>
-                            <span className="brand-name">SafeLink</span>
-                        </a>
+                        <Link
+                            to="/"
+                            className="brand"
+                        >
+                            <span className="brand-icon">
+                                S
+                            </span>
+
+                            <span className="brand-name">
+                                SafeLink
+                            </span>
+                        </Link>
 
                         <p>
                             Emergency communication beyond conventional networks.
@@ -22,19 +32,23 @@ function Footer() {
                     {/* Navigation */}
                     <div className="footer-links">
 
-                        <a href="#home">
+                        <Link to="/">
                             Home
-                        </a>
+                        </Link>
 
-                        <a href="#how-it-works">
+                        <a href="/#how-it-works">
                             How It Works
                         </a>
 
-                        <a href="#emergency">
+                        <Link to="/emergency">
                             Emergency Alert
-                        </a>
+                        </Link>
 
-                        <a href="#about">
+                        <Link to="/messages">
+                            Messages
+                        </Link>
+
+                        <a href="/#about">
                             About
                         </a>
 
